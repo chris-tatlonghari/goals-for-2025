@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @jake_goals = Goal.find_or_initialize_by(owner: "Jake")
     @caleb_goals = Goal.find_or_initialize_by(owner: "Caleb")
     @jimmy_goals = Goal.find_or_initialize_by(owner: "Jimmy")
+    @brycen_goals = Goal.find_or_initialize_by(owner: "Brycen")
   end
 
   def save_goal

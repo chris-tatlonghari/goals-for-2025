@@ -33,5 +33,13 @@
         <%= form.submit "Save" %>
       <% end %>
     </div>
+    <div class="goal">
+      <h2>Brycen's Goals</h2>
+      <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
+        <%= form.hidden_field :owner, value: @brycen_goals.owner %>
+        <%= form.text_area :goal, value: @brycen_goals.content, placeholder: "Write your goal here...", rows: 5 %>
+        <%= form.submit "Save" %>
+      <% end %>
+    </div>
   </div>
 </div>
