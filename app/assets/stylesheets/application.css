@@ -15,5 +15,8 @@
  */
 
  body {
-    background-color: #10131c;
+   background-color: #10131c;
+
+   margin: 0;
+   padding: 0;
  }
