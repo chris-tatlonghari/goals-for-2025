@@ -1,7 +1,7 @@
-<div>
+<div class="container">
   <h1>Goals for 2025 🎉</h1>
-  <div>
-    <div>
+  <div class="goals">
+    <div class="goal">
       <h2>Chris's Goals</h2>
       <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
         <%= form.hidden_field :owner, value: @chris_goals.owner %>
@@ -9,7 +9,7 @@
         <%= form.submit "Save" %>
       <% end %>
     </div>
-    <div>
+    <div class="goal">
       <h2>Jake's Goals</h2>
       <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
         <%= form.hidden_field :owner, value: @jake_goals.owner %>
@@ -17,7 +17,7 @@
         <%= form.submit "Save" %>
       <% end %>
     </div>
-    <div>
+    <div class="goal">
       <h2>Caleb's Goals</h2>
       <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
         <%= form.hidden_field :owner, value: @caleb_goals.owner %>
@@ -25,7 +25,7 @@
         <%= form.submit "Save" %>
       <% end %>
     </div>
-    <div>
+    <div class="goal">
       <h2>Jimmy's Goals</h2>
       <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
         <%= form.hidden_field :owner, value: @jimmy_goals.owner %>

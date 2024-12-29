@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Goals Container (Flexbox Layout) */
+  .goals {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap */
+    gap: 20px; /* Space between the goal divs */
+    margin-top: 20px;
+  }
+  
+  /* Individual Goal Section Styling */
+  .goal {
+    flex: 1 1 45%; /* Ensure each goal takes up about 48% of the container width (two per row) */
+    min-width: 280px; /* Minimum width to prevent it from becoming too small */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .goal h2 {
+    color: #10131c;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Form Elements Inside Each Goal */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccd0d5;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #10131c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #6a779e;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .goal {
+      flex: 1 1 100%; /* Make each goal take up the full width (one per row on mobile) */
+    }
+  }
+  
