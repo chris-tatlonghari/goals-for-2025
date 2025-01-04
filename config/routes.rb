@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  # get 'home/index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -9,5 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  post "save_goal", to: "home#save_goal"
+  post "save_goal", to: "goals#save_goal"
+
+  get "goals", to: "goals#index"
 end
