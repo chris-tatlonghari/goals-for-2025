@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  post "save_goal", to: "goals#save_goal"
-
   get "goals", to: "goals#index"
+  post "save_goal", to: "goals#save_goal"
+  
+  get 'passkey/:character_name', to: 'home#passkey', as: 'passkey'
+  post "passkey/:character_name", to: "home#submit_passkey"
+
 end

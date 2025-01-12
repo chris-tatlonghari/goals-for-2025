@@ -1,0 +1,11 @@
+<div class="passkey-container">
+  <div class="passkey-title">
+    Enter the passkey for <%= @character_name.capitalize %>
+  </div>
+  <form action="#" method="post">
+    <input type="password" id="passkey" name="passkey" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <%= link_to 'Cancel', root_path, class: 'cancel-button' %>
+</div>
