@@ -1,18 +1,19 @@
 class HomeController < ApplicationController
   def index
-    @chris_goals = Goal.find_or_initialize_by(owner: "Chris")
-    @jake_goals = Goal.find_or_initialize_by(owner: "Jake")
-    @caleb_goals = Goal.find_or_initialize_by(owner: "Caleb")
-    @jimmy_goals = Goal.find_or_initialize_by(owner: "Jimmy")
-    @brycen_goals = Goal.find_or_initialize_by(owner: "Brycen")
   end
 
-  def save_goal
-    goal = Goal.find_or_initialize_by(owner: params[:owner])
-    
-    goal.update!(content: params[:goal])
-
-    flash[:notice] = "#{goal.owner}'s goal was saved successfully!"
-    redirect_to root_path
+  def passkey
+    @character_name = params[:character_name]
+  end
+  
+  def submit_passkey
+    user = User.find_by(first_name: params[:character_name])
+    if user.passkey == params[:passkey]
+      session[:character_name] = params[:character_name]
+      redirect_to goals_path
+    else
+      flash[:error] = "The entered passkey is incorrect!"
+      redirect_to passkey_path
+    end
   end
 end

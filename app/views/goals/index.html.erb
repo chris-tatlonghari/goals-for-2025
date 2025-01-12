@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Goals for 2025 🎉</h1>
+
+  <div class="goals">
+
+    <% @goals.each do |goal| %>
+      <div class="goal">
+        <h2><%= goal.user.first_name %>'s Goals</h2>
+        <%= form_with url: save_goal_path, method: :post, local: true do |form| %>
+          <%= form.hidden_field :member, value: goal.user.first_name %>
+          <%= form.text_area :goal, value: goal.content, placeholder: "Write your goal here...", rows: 5, disabled: goal.user.first_name != session[:character_name] %>
+          <% if goal.user.first_name == session[:character_name] %>
+            <%= form.submit "Save" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
