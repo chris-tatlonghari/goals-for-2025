@@ -58,8 +58,8 @@ USER rails:rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # MAY TAKE OUT
-# Precompile assets
-RUN bundle exec rails assets:precompile
+# Precompiling assets for production including images
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile RAILS_ENV=production
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
