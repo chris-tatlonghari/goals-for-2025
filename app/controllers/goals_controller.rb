@@ -1,18 +1,26 @@
 class GoalsController < ApplicationController
   def index
-    @chris_goals = Goal.find_or_initialize_by(owner: "Chris")
-    @jake_goals = Goal.find_or_initialize_by(owner: "Jake")
-    @caleb_goals = Goal.find_or_initialize_by(owner: "Caleb")
-    @jimmy_goals = Goal.find_or_initialize_by(owner: "Jimmy")
-    @brycen_goals = Goal.find_or_initialize_by(owner: "Brycen")
+    names = ["Chris", "Jake", "Caleb", "Jimmy", "Brycen"] # TODO: Grab this from configuration.
+    @goals = []
+
+    names.each do |name|
+      member = User.find_or_initialize_by(first_name: name)
+      member.save! unless member.persisted?
+
+      goal = Goal.find_or_initialize_by(user: member)
+      goal.save! unless goal.persisted?
+
+      @goals << goal
+    end
   end
 
   def save_goal
-    goal = Goal.find_or_initialize_by(owner: params[:owner])
+    member = User.find_or_initialize_by(first_name: params[:member])
+    goal = Goal.find_or_initialize_by(user: member)
     
     goal.update!(content: params[:goal])
 
-    flash[:notice] = "#{goal.owner}'s goal was saved successfully!"
+    flash[:notice] = "Your goal was saved successfully!"
     redirect_to goals_path
   end
 end

@@ -7,8 +7,13 @@ class HomeController < ApplicationController
   end
   
   def submit_passkey
-    session[:character_name] = params[:character_name]
-    session[:passkey] = params[:passkey]
-    redirect_to goals_path
+    user = User.find_by(first_name: params[:character_name])
+    if user.passkey == params[:passkey]
+      session[:character_name] = params[:character_name]
+      redirect_to goals_path
+    else
+      flash[:error] = "The entered passkey is incorrect!"
+      redirect_to passkey_path
+    end
   end
 end
