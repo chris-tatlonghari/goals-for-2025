@@ -57,10 +57,6 @@ USER rails:rails
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# MAY TAKE OUT
-# Precompiling assets for production including images
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile RAILS_ENV=production
-
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
