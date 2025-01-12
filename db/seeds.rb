@@ -8,4 +8,3 @@ User.find_or_create_by!(first_name: 'Jake', passkey: '1234')
 User.find_or_create_by!(first_name: 'Caleb', passkey: '1234')
 User.find_or_create_by!(first_name: 'Jimmy', passkey: '1234')
 User.find_or_create_by!(first_name: 'Brycen', passkey: '1234')
-
