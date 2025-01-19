@@ -103,6 +103,8 @@
     width: 10px;
     height: 10px;
     border-radius: 2px;
+
+    position: relative;
 }
 
 .goal-tracking-container .content .daily-goal-container .grid .week .day[goal-progress="0"] {
@@ -128,3 +130,20 @@
 .goal-tracking-container .content .daily-goal-container .grid .week .day[goal-progress="hidden"] {
     opacity: 0;
 }
+
+
+.goal-tracking-container .content .daily-goal-container .grid .week .day:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%; /* Adjust to position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+    display: block;
+  }
