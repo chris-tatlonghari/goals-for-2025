@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'passkey/:character_name', to: 'home#passkey', as: 'passkey'
   post "passkey/:character_name", to: "home#submit_passkey"
 
+  get 'goals/:character_name/tracking', to: 'goals/tracking#index'
+
 end

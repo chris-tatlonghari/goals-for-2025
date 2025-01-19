@@ -1,0 +1,33 @@
+<div class="goal-tracking-container">
+    <div class="header">
+        <div class="title">
+            Goal Tracking
+        </div>
+    </div>
+    <div class="content">
+
+        <% @daily_goals.each do |goal|%>
+            <div class="daily-goal-container">
+                <span class="goal-title"><%= "Daily Progress" %></span>
+                <div class="grid">
+                    <% (1..53).each do %>
+                        <div class="week">
+                            <% (1..7).each do %>
+                                <div class="day" goal-progress="<%= rand(0..4) * rand(0..1) %>"></div>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="goal-legend">
+                    Less
+                    <div class="day" goal-progress="0"></div>
+                    <div class="day" goal-progress="1"></div>
+                    <div class="day" goal-progress="2"></div>
+                    <div class="day" goal-progress="3"></div>
+                    <div class="day" goal-progress="4"></div>
+                    More
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
