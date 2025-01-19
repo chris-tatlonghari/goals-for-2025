@@ -8,7 +8,7 @@
 }
 
 .goal-tracking-container .header .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
 
     padding: 10px;
@@ -17,16 +17,31 @@
 .goal-tracking-container .content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
     align-items: center;
 }
 
+.goal-tracking-container .content .daily-goal-updater {
+    width: 60%;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    align-self: center;
+    color: gray;
+    text-align: right;
+}
+
+.goal-tracking-container .content .daily-goal-updater:hover {
+    color: #0969da;
+    text-decoration: underline;
+}
+
+.goal-tracking-container .content .daily-goal-updater .arrow {
+    font-size: 10px;
+}
+
 .goal-tracking-container .content .daily-goal-container {
-    margin-top: 5rem;
-
-    max-width: 60%;
+    margin-bottom: 2.5rem;
+    width: 60%;
     border: 1px solid #555;
-
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 
@@ -146,4 +161,4 @@
     white-space: nowrap;
     z-index: 10;
     display: block;
-  }
+}

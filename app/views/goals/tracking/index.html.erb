@@ -1,13 +1,14 @@
 <div class="goal-tracking-container">
     <div class="header">
         <div class="title">
-            Goal Tracking
+            Goal Tracker
         </div>
     </div>
     <div class="content">
-        <% @daily_goals.each do |goal|%>
+        <% @daily_goals.each.with_index do |goal, i|%>
+            <div class="daily-goal-updater">Update Daily Progress <span class="arrow">▼</span></div>
             <div class="daily-goal-container">
-                <span class="goal-title"><%= "Daily Progress" %></span>
+                <span class="goal-title"><%= @goal_names[i] %></span>
                 <div class="grid">
                     <% (0..52).each do |week| %>
                         <div class="week">
