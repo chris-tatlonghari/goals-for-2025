@@ -10,10 +10,10 @@
             <div class="daily-goal-container">
                 <span class="goal-title"><%= "Daily Progress" %></span>
                 <div class="grid">
-                    <% (1..53).each do %>
+                    <% (0..52).each do |week| %>
                         <div class="week">
-                            <% (1..7).each do %>
-                                <div class="day" goal-progress="<%= rand(0..4) * rand(0..1) %>"></div>
+                            <% (1..7).each do |day| %>
+                                <div class="day" goal-progress="<%= get_day_progess_value(week, day, goal) %>"></div>
                             <% end %>
                         </div>
                     <% end %>

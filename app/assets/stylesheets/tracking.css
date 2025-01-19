@@ -124,3 +124,7 @@
 .goal-tracking-container .content .daily-goal-container .grid .week .day[goal-progress="4"] {
     background-color: #39D353;
 }
+
+.goal-tracking-container .content .daily-goal-container .grid .week .day[goal-progress="hidden"] {
+    opacity: 0;
+}
