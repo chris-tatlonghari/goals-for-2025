@@ -11,7 +11,7 @@ module Goals
       day_number = (week_index * 7 + day_index) - 1
 
       start_date = Date.new(2025, 1, 1)
-      current_date = start_date + day_number
+      current_date = start_date + (day_number - 1)
 
       day_suffix = case current_date.day
                   when 1, 21, 31 then 'st'
