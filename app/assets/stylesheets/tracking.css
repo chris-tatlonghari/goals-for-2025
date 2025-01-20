@@ -39,7 +39,6 @@
 }
 
 .goal-tracking-container .content .daily-goal-container {
-    margin-bottom: 2.5rem;
     width: 60%;
     border: 1px solid #555;
     border-top-left-radius: 10px;
@@ -161,4 +160,15 @@
     white-space: nowrap;
     z-index: 10;
     display: block;
+}
+
+.goal-tracking-container .content .update-progress-container {
+    margin-top: 0.5rem;
+    margin-bottom: 2.5rem;
+    width: 60%;
+    color: white;
+}
+
+.goal-tracking-container .content .hidden {
+    display: none;
 }

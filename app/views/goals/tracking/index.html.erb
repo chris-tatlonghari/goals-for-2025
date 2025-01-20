@@ -4,9 +4,11 @@
             Goal Tracker
         </div>
     </div>
-    <div class="content">
+    <div class="content" data-controller="tracking">
         <% @daily_goals.each.with_index do |goal, i|%>
-            <div class="daily-goal-updater">Update Daily Progress <span class="arrow">▼</span></div>
+            <div class="daily-goal-updater" data-action="click->tracking#toggleUpdateProgress">
+                Update Daily Progress <span class="arrow">▼</span>
+            </div>
             <div class="daily-goal-container">
                 <span class="goal-title"><%= @goal_names[i] %></span>
                 <div class="grid">
@@ -32,6 +34,9 @@
                     <div class="day" goal-progress="4"></div>
                     More
                 </div>
+            </div>
+            <div class="update-progress-container hidden" data-tracking-target="updateProgress">
+                <%= Date.today.strftime("%A, %B %d, %Y") %>
             </div>
         <% end %>
     </div>
