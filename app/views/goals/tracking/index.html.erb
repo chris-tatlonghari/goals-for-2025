@@ -6,8 +6,11 @@
     </div>
     <div class="content" data-controller="tracking">
         <% @daily_goals.each.with_index do |goal, i|%>
-            <div class="daily-goal-updater" data-action="click->tracking#toggleUpdateProgress">
-                Update Daily Progress <span class="arrow">▼</span>
+            <div 
+                class="daily-goal-updater" 
+                data-action="click->tracking#toggleUpdateProgress" 
+                data-index="<%= i %>">
+                    Update Daily Progress <span class="arrow">▼</span>
             </div>
             <div class="daily-goal-container">
                 <span class="goal-title"><%= @goal_names[i] %></span>

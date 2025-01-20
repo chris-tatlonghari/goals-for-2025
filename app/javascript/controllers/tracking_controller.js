@@ -3,7 +3,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
     static targets = ["updateProgress"]
     
-    toggleUpdateProgress() {
-        this.updateProgressTarget.classList.toggle("hidden")
+    toggleUpdateProgress(e) {
+        const index = e.currentTarget.dataset.index
+        
+        this.updateProgressTargets[index].classList.toggle("hidden")
     }
 }
